@@ -12,13 +12,15 @@
                         <form @submit.prevent="submit">
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-large" type="email" placeholder="Your Email" autofocus="" v-model="form.email">
+                                    <input class="input is-large" :class="{'is-danger' : errors.email}" type="email" placeholder="Your Email" autofocus="" v-model="form.email">
+                                    <p class="help is-danger" v-if="errors.email">{{errors.email[0]}}</p>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-large" type="password" placeholder="Your Password" v-model="form.password">
+                                    <input class="input is-large" :class="{'is-danger' : errors.password}" type="password" placeholder="Your Password" v-model="form.password">
+                                    <p class="help is-danger" v-if="errors.password">{{errors.password[0]}}</p>
                                 </div>
                             </div>
                             <div class="field">

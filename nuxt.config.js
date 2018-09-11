@@ -25,8 +25,16 @@ module.exports = {
     '@nuxtjs/auth'
   ],
 
+  router: {
+    middleware: [
+      'clearValidationErrors'
+    ]
+  },
+
   plugins: [
-    './plugins/mixins/user'
+    './plugins/mixins/user',
+    './plugins/axios',
+    './plugins/mixins/validation'
   ],
 
   axios: {
