@@ -27,7 +27,7 @@
                         {{ user.name }}
                         </a>
                         <div class="navbar-dropdown is-boxed">
-                        <a class="navbar-item">
+                        <a class="navbar-item" @click.prevent="logout">
                             Logout
                         </a>
                         </div>
@@ -37,3 +37,13 @@
         </div>
     </nav>
 </template>
+
+<script>
+    export default {
+        methods: {
+            logout () {
+                this.$auth.logout()
+            }
+        }
+    }
+</script>

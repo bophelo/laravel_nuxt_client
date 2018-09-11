@@ -47,7 +47,10 @@ module.exports = {
             method: 'get',
             propertyName: 'data'
           },
-          logout: {}
+          logout: {
+            url: 'logout',
+            method: 'post'
+          }
         }
       }
     }
