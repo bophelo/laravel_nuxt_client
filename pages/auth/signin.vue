@@ -61,7 +61,7 @@
                 })
 
                 this.$router.push({
-                    path: '/' //todo redirect to indtended
+                    path: this.$route.query.redirect || '/'
                 })
             } 
         }
