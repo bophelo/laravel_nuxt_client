@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'laravel_nuxt_client',
+    title: 'Laravel API + Nuxt Client',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -19,6 +19,31 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
+  ],
+
+  axios: {
+    baseURL: 'http://localhost:8000/api'
+  },
+
+  auth: {
+    endpoints: {
+      login: {
+        url: 'login',
+        method: 'post',
+        propertyName: 'meta.original.access_token'
+      },
+      user: {
+        url: 'me',
+        method: 'get',
+        propertyName: 'data'
+      },
+      logout: {}
+    }
+  },
   /*
   ** Build configuration
   */
