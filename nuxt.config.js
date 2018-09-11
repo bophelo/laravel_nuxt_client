@@ -59,8 +59,12 @@ module.exports = {
             url: 'logout',
             method: 'post'
           }
-        }
-      }
+        },
+      },
+    },
+    redirect: {
+          login: '/auth/signin',
+          home: '/'
     }
   },
   /*
