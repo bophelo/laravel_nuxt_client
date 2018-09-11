@@ -16,9 +16,9 @@
             <a class="navbar-item">
                 Sign-Up
             </a>
-            <a class="navbar-item">
+            <nuxt-link :to="{ name: 'auth-signin' }" class="navbar-item">
                 Sign-In
-            </a>
+            </nuxt-link>
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
                 Mpilo Makae
