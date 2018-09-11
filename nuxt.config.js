@@ -25,23 +25,31 @@ module.exports = {
     '@nuxtjs/auth'
   ],
 
+  plugins: [
+    './plugins/mixins/user'
+  ],
+
   axios: {
     baseURL: 'http://localhost:8000/api'
   },
 
   auth: {
-    endpoints: {
-      login: {
-        url: 'login',
-        method: 'post',
-        propertyName: 'meta.original.access_token'
-      },
-      user: {
-        url: 'me',
-        method: 'get',
-        propertyName: 'data'
-      },
-      logout: {}
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: 'login',
+            method: 'post',
+            propertyName: 'meta.original.access_token'
+          },
+          user: {
+            url: 'me',
+            method: 'get',
+            propertyName: 'data'
+          },
+          logout: {}
+        }
+      }
     }
   },
   /*
